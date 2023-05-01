@@ -1,0 +1,91 @@
+@use 'helpers' as *;
+
+
+.nav {
+  &__list {
+    display: flex;
+    @include flex-box(row, initial, 50);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all 1s;
+
+    @media screen and (max-width: 768px) {
+    
+      background: #fff;
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      transform: translate(100%, -100%);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $dark-color;
+    font-weight: 600;
+    font-family: $font-loto; 
+    line-height: 17px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 768px)  {
+      font-size: 32px;
+    }
+  }
+}
+
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  width: 48px;
+  height: 48px;
+  position: relative;
+
+  &__line {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    display: block;
+    margin: 6px 0;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.responsive {
+  .burger-menu__line {
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+
+    &:first-child {
+      transform: rotate(45deg) translate(0,-50%);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(-45deg) translate(8%,-50%);
+    }
+    &:last-child {
+      display: none;
+    }
+  }
+
+  .nav {
+    &__list {
+      transform: translate(0, 0);
+    }
+  }
+}

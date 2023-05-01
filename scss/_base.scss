@@ -1,0 +1,24 @@
+@use 'helpers' as *;
+* {
+	box-sizing: border-box;
+}
+
+p {
+	font-family:$font-loto;
+	font-style: normal;
+	font-weight: 400;
+	font-size: $font-s;
+	line-height: 166%;
+	letter-spacing: 0.1em;
+	color: #7B7B7B;
+	margin-bottom: 30px;
+}
+h3 {
+  font-family: $font;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 166%;
+  letter-spacing: 0.1em;
+  color: $b-col;
+  margin: 0;
+}
